@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Equipos</h1>
+
+{% for equipo in equipos %}
+  <div>
+    <h1>{{ equipo.name }}</h1>
+    <form method="post" action="{% url 'eliminar_equipo' equipo.id %}">
+      {% csrf_token %}
+      <button type="submit" onclick="return confirm('¿Estás seguro de que deseas eliminar este equipo?')">Delete</button> 
+    </form>
+  </div> 
+{% endfor %}
+
+{% endblock %}
+#Agegando mensaje de confirmaión para eliminar equipo

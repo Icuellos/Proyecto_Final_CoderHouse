@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Ingresa nombre de tu equipo</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div>
+            <select name="liga" id="id_liga">
+            </select>
+        </div>
+        <button type="submit">Save</button>
+    </form>
+{% endblock %}
+

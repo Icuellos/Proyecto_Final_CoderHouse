@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Ligas</h1>
+
+    {% for liga in Ligas %}
+        <div>
+            <a href="{% url 'detalle_liga' liga.id %}">
+                <h1>{{ liga.name }}</h1>
+            </a>
+            <form method="post" action="{% url 'eliminar_liga' liga.id %}">
+                {% csrf_token %}
+                <button type="submit" onclick="return confirm('¿Estás seguro de que deseas eliminar esta liga?')">Delete</button>
+            </form>
+        </div>
+    {% endfor %}
+{% endblock %}
+
+
+
+
+

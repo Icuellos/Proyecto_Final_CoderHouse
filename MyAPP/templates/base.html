@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Título de la página</title>
+    <link rel="stylesheet" href="ruta/al/archivo.css">
+</head>
+<body>
+    <header>
+        <h1>Comparti juguetes que ya no utilices!!</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/Proyectos">Ligas</a></li>
+                <li><a href="/Equipo">Equipos Infantiles</a></li>
+                <li>
+                    <a href="#">Ingresar datos</a>
+                    <ul>
+                        <li><a href="/create_toy">Ingresa nombre del juguete</a></li>
+                        <li><a href="/Crear_Liga">Ingresa una Nueva Liga</a></li>
+                        <li><a href="/Crear_form">Ingrese Nuevo Jugador</a></li>
+                        <li><a href="/Crear_Equipo">Ingrese Nuevo Equipo</a></li>
+                    </ul>
+                </li>
+                <li><a href="/buscar/">Buscar</a></li>
+                <li><a href="/About">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+    </footer>
+</body>
+</html>

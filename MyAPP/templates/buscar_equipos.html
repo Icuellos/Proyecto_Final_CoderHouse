@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Busca tu equipo!!</h1>
+
+    <form method="GET" action="{% url 'buscar_equipos' %}">
+        <input type="text" name="query" placeholder="Buscar equipo...">
+        <button type="submit">Buscar</button>
+    </form>
+
+    {% if equipos %}
+        <ul>
+            {% for equipo in equipos %}
+                <li>
+                    <a href="{% url 'detalle_equipo' equipo.id %}">{{ equipo.name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No se encontraron equipos. Intenta nuevamente!!.</p>
+    {% endif %}
+{% endblock %}
+
+
+
+
+
+
+

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Busca tu equipo o liga de preferencia!!</h1>
+
+    <form method="POST" action="{% url 'buscar' %}">
+        {% csrf_token %}
+        {{ form.tipo_busqueda.label_tag }}
+        {{ form.tipo_busqueda }}
+        {{ form.termino.label_tag }}
+        {{ form.termino }}
+        <button type="submit">Buscar</button>
+    </form>
+
+    {% if equipos %}
+        <h2>Resultado de la búsqueda: Equipo!!</h2>
+        <ul>
+            {% for equipo in equipos %}
+                <li>{{ equipo.name }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% if ligas %}
+        <h2>Resultados de la búsqueda: Liga!!</h2>
+        <ul>
+            {% for liga in ligas %}
+                <li>{{ liga.name }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}
